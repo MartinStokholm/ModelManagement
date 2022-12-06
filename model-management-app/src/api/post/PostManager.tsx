@@ -12,7 +12,9 @@ export const register = async (data: ManagerRegisterDto) => {
 
 export const useRegister = () => {
   return useMutation(register, {
-    onSuccess: () => {},
+    onSuccess: () => {
+      console.log("Manager has been created");
+    },
     onError: (error) => {
       console.log((error as any).message);
     },

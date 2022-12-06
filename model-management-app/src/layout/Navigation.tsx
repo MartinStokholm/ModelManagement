@@ -5,7 +5,7 @@ import React from "react";
 
 const Navigation = () => {
   return (
-    <div>
+    <nav>
       <Navbar
         fluid={true}
         rounded={false}
@@ -39,7 +39,7 @@ const Navigation = () => {
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
-    </div>
+    </nav>
   );
 };
 

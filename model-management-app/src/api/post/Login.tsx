@@ -36,8 +36,10 @@ export const useLogin = () => {
       const pwd = localStorage.getItem("pwd");
 
       setAuth([user, pwd, roles, accessToken]);
+      console.log(user + " has logged in");
     },
     onError: (error) => {
+      console.log("logging failed");
       console.log((error as any).message);
     },
     onSettled: () => {
