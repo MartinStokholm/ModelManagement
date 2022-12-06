@@ -14,7 +14,7 @@ export const useExpense = () => {
   return useMutation(expense, {
     onSuccess: () => {},
     onError: (error) => {
-      console.log(error.message);
+      console.log((error as any).message);
     },
   });
 };

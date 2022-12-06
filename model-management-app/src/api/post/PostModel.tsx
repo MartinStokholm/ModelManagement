@@ -14,7 +14,7 @@ export const usePostModel = () => {
   return useMutation(postModel, {
     onSuccess: () => {},
     onError: (error) => {
-      console.log(error.message);
+      console.log((error as any).message);
     },
   });
 };

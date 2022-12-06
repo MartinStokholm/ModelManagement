@@ -1,4 +1,4 @@
-function parseJwt(token: string) {
+function JwtParser(token: string) {
   var base64Url = token.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   var jsonPayload = decodeURIComponent(
@@ -14,4 +14,4 @@ function parseJwt(token: string) {
   return JSON.parse(jsonPayload);
 }
 
-export default parseJwt;
+export default JwtParser;

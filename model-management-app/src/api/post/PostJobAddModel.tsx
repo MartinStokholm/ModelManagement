@@ -15,7 +15,7 @@ export const useJobAddModel = () => {
   return useMutation(jobAddModel, {
     onSuccess: () => {},
     onError: (error) => {
-      console.log(error.message);
+      console.log((error as any).message);
     },
     onSettled: () => {
       queryClient.invalidateQueries("jobsKey");

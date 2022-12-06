@@ -14,7 +14,7 @@ export const useRegister = () => {
   return useMutation(register, {
     onSuccess: () => {},
     onError: (error) => {
-      console.log(error.message);
+      console.log((error as any).message);
     },
   });
 };
