@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Job } from "../interfaces/Job";
+import type { Job } from "../../interfaces/Job";
 import Moment from "moment";
 
 const JobList = ({ jobList }: { jobList: Job[] }) => {

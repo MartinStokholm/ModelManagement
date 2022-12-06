@@ -1,7 +1,7 @@
 import { Spinner } from "flowbite-react";
 import GetJobList from "../api/get/Jobs";
-import CreateJob from "../components/CreateJob";
-import JobList from "../components/JobList";
+import CreateJob from "../components/job/CreateJob";
+import JobList from "../components/job/JobList";
 
 const JobPage = () => {
   const { data: jobsData, isLoading, isError, error } = GetJobList();

@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from "react";
-import { useJobAddModel } from "../api/post/PostJobAddModel";
-import { useJobDeleteModel } from "../api/delete/JobRemovedModel";
-import { JobModelDto } from "../interfaces/Job";
-import GetModelList from "../api/get/Model";
+import { useJobAddModel } from "../../api/post/PostJobAddModel";
+import { useJobDeleteModel } from "../../api/delete/JobRemovedModel";
+import { JobModelDto } from "../../interfaces/Job";
+import GetModelList from "../../api/get/Model";
 import { Button } from "flowbite-react";
+import Dropdown from "../Dropdown";
 
 const ModalJobModel = ({ jobId }: { jobId: number }) => {
   const { data: data, isLoading, isError, error } = GetModelList();
@@ -12,7 +13,6 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
   const { mutate: jobDeleteModel } = useJobDeleteModel();
   const [modelId, setModelId] = useState<number>(0);
   const [modelName, setModelName] = useState<string>("Select an options");
-  const [open, setOpen] = useState(false);
 
   if (isLoading) {
     return <></>;
@@ -25,23 +25,22 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
   const handleMenu = (model: string, index: number) => {
     setModelId(index + 1);
     setModelName(model);
-    setOpen(false);
   };
 
   const handleAddModelOnclick = () => {
-    const workoutDto: JobModelDto = {
+    const jobModelDto: JobModelDto = {
       jobId: jobId,
       modelId: modelId,
     };
-    console.log("workoutdto", workoutDto);
-    jobAddModel(workoutDto);
+    console.log("jobModeldto", jobModelDto);
+    jobAddModel(jobModelDto);
   };
   const handleDeleteModelOnclick = () => {
-    const workoutDto: JobModelDto = {
+    const jobModelDto: JobModelDto = {
       jobId: jobId,
       modelId: modelId,
     };
-    jobDeleteModel(workoutDto);
+    jobDeleteModel(jobModelDto);
   };
 
   return (
@@ -52,15 +51,15 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
           trigger={
             <button className="mx-2 flex justify-center items-center">
               {modelName}
-              <ChevronDownIcon className="m-2 h-10 w-10" />
             </button>
           }
           menu={model.map((model, index) => (
-            <DropdownButton
+            <Button
               onClick={() => handleMenu(model?.firstName, index)}
-              text={model?.firstName}
               key={index}
-            />
+            >
+              {model?.firstName}
+            </Button>
           ))}
         />
 

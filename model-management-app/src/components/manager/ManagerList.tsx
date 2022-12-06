@@ -1,4 +1,4 @@
-import { ManagerRegisterDto } from "../interfaces/Manager";
+import { ManagerRegisterDto } from "../../interfaces/Manager";
 
 const ManagerList = ({ managerData }: { managerData: any[] }) => {
   return (

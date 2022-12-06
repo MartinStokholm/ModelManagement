@@ -1,4 +1,4 @@
-import { ModelDto } from "../../../../interfaces/Model";
+import { ModelDto } from "../../interfaces/Model";
 
 const JobModel = ({ model }: { model: ModelDto }) => {
   return (

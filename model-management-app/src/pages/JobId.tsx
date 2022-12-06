@@ -1,8 +1,7 @@
 import { Spinner } from "flowbite-react";
-import GetJobList from "../api/get/Jobs";
 import { GetJob } from "../api/get/Job";
 import { useParams } from "react-router-dom";
-import JobItemModel from "../components/JobItemModel";
+import JobItemModel from "../components/job/JobItemModel";
 
 const JobsPage = () => {
   const { jobId } = useParams();

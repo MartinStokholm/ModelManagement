@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChangeEvent } from "react";
-import type { JobRegisterDto } from "../interfaces/Job";
-import { useRegister } from "../api/post/PostJob";
+import type { JobRegisterDto } from "../../interfaces/Job";
+import { useRegister } from "../../api/post/PostJob";
 import { Button, Label, TextInput } from "flowbite-react";
 
 export default function CreateJob() {

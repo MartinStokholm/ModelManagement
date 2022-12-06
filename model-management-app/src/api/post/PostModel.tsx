@@ -2,7 +2,7 @@ import { useMutation } from "react-query";
 import { request } from "../Utils";
 import type { ModelRegisterDto } from "../../interfaces/Model";
 
-export const postModel = async (data: ModelRegisterDto) => {
+export const register = async (data: ModelRegisterDto) => {
   return await request({
     url: `Models`,
     method: "POST",
@@ -10,9 +10,11 @@ export const postModel = async (data: ModelRegisterDto) => {
   });
 };
 
-export const usePostModel = () => {
-  return useMutation(postModel, {
-    onSuccess: () => {},
+export const useRegister = () => {
+  return useMutation(register, {
+    onSuccess: () => {
+      console.log("Model has been created");
+    },
     onError: (error) => {
       console.log((error as any).message);
     },

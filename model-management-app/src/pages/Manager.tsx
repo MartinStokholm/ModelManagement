@@ -1,7 +1,8 @@
 import { Spinner } from "flowbite-react";
 import GetManagerList from "../api/get/Manager";
-import CreateManager from "../components/CreateManager";
-import ManagerList from "../components/ManagerList";
+import CreateManager from "../components/manager/CreateManager";
+import ManagerList from "../components/manager/ManagerList";
+import CreateModel from "../components/manager/CreateModel";
 
 const Mananger = () => {
   const { data: managerData, isLoading, isError, error } = GetManagerList();
@@ -16,7 +17,14 @@ const Mananger = () => {
 
   return (
     <>
-      <CreateManager />
+      <div className="flex justify-between">
+        <div className="w-1/2">
+          <CreateManager />
+        </div>
+        <div className="w-1/2">
+          <CreateModel />
+        </div>
+      </div>
       <ManagerList managerData={managerData?.data} />
     </>
   );

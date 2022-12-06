@@ -1,10 +1,10 @@
-import type { Job } from "../interfaces/Job";
+import type { Job } from "../../interfaces/Job";
 import Moment from "moment";
 import JobModel from "./JobModel";
 import { useState } from "react";
 import ModalJobModel from "./ModalJobModel";
 import ModalAddExpense from "./ModalAddExpense";
-import useAuth from "../auth/useAuth";
+import useAuth from "../../auth/useAuth";
 import { Button } from "flowbite-react";
 
 const JobItem = ({ job }: { job: Job }) => {
@@ -41,20 +41,10 @@ const JobItem = ({ job }: { job: Job }) => {
           ))}
         </div>
       </div>
+      <div className="flex border-4 border-blue-500 rounded bg-white ">
+        <ModalJobModel jobId={job.jobId} />
 
-      <div className="text-3 font-bold underline ">
-        <Modal IsVisible={showModal} onClose={() => setShowModal(false)}>
-          <ModalJobModel jobId={job.jobId} />
-        </Modal>
-      </div>
-
-      <div className="text-3 font-bold underline ">
-        <Modal
-          IsVisible={showModalExpense}
-          onClose={() => setShowModalExpense(false)}
-        >
-          <ModalAddExpense jobId={job.jobId} />
-        </Modal>
+        <ModalAddExpense jobId={job.jobId} />
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
-import type { ManagerRegisterDto } from "../interfaces/Manager";
-import { useRegister } from "../api/post/PostManager";
+import type { ManagerRegisterDto } from "../../interfaces/Manager";
+import { useRegister } from "../../api/post/PostManager";
 
 const CreateManager = () => {
   const [email, setEmail] = useState("");
@@ -72,7 +72,7 @@ const CreateManager = () => {
               }
             />
           </div>
-          <Button onClick={handleSubmit}>Create</Button>
+          <Button onClick={handleSubmit}>Create Manager</Button>
         </form>
       </div>
     </div>

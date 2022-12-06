@@ -1,10 +1,7 @@
 import { ChangeEvent, useState } from "react";
-import { useExpense } from "../../../mutation/Expense/PostExpense";
-import NumberField from "../../NumberField";
-import Button from "../../Button";
-import { ExpenseDto } from "../../../../interfaces/Expense";
-import InputField from "../../InputFieldModal";
-import { Label } from "../../ModalComponents/Label";
+import { useExpense } from "../../api/post/PostExpense";
+import { ExpenseDto } from "../../interfaces/Expense";
+import { Button, TextInput, Label } from "flowbite-react";
 
 const ModalJobModel = ({ jobId }: { jobId: number }) => {
   const { mutate: expense } = useExpense();
@@ -28,8 +25,8 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
     <form className="flex flex-col justify-center">
       <label className="mx-4 text-sm">Add Expense To Job</label>
       <div className=" inline-flex justify-between">
-        <Label text={"Model Id"} />
-        <NumberField
+        <Label>Model Id</Label>
+        <TextInput
           required
           placeholder="560"
           value={modelId}
@@ -42,8 +39,8 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
       </div>
 
       <div className=" inline-flex justify-between">
-        <Label text={"Text"} />
-        <InputField
+        <Label>Text</Label>
+        <TextInput
           type="text"
           required
           placeholder="Text"
@@ -54,8 +51,8 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
         />
       </div>
       <div className=" inline-flex justify-between">
-        <Label text={"Date"} />
-        <InputField
+        <Label>Date</Label>
+        <TextInput
           type="date"
           required
           placeholder="2022-12-03T20:42:51.203Z"
@@ -66,9 +63,10 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
         />
       </div>
       <div className=" inline-flex justify-between">
-        <Label text={"Amount"} />
-        <NumberField
+        <Label>Amount</Label>
+        <TextInput
           required
+          type="number"
           placeholder="356"
           value={amount}
           min={"0"}
@@ -79,7 +77,7 @@ const ModalJobModel = ({ jobId }: { jobId: number }) => {
         />
       </div>
       <div className="inline-flex justify-between ">
-        <Button text="Add" onClick={handleAddModelOnclick} />
+        <Button onClick={handleAddModelOnclick}> Add Expense</Button>
       </div>
     </form>
   );
