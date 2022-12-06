@@ -4,7 +4,6 @@ import { request } from "./Utils";
 const fetchModelJobs = async ({ queryKey }: { queryKey: Array<any> }) => {
   const id = queryKey[1];
   const response = await request({ url: `job/${id}`, method: "get" });
-  console.log(response.status);
   if (response.status === 304) {
     throw new Error("Problem fetching data");
   }
