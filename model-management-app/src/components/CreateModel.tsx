@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
-import type { ModelRegisterDto } from "../../interfaces/Model";
-import { useRegister } from "../../api/post/PostModel";
+import type { ModelRegisterDto } from "../interfaces/Model";
+import { useRegister } from "../api/post/PostModel";
 
 const CreateModel = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -49,9 +49,10 @@ const CreateModel = () => {
 
   return (
     <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
-      <div className="flex flex-col justify-center ">
+      <div className="flex flex-col">
+        <Label className="py-4">Create a Model</Label>
         <form className="flex flex-wrap justify-between">
-          <div className="">
+          <div className="flex flex-col mx-2">
             <Label>First name</Label>
             <TextInput
               type="text"
@@ -62,8 +63,6 @@ const CreateModel = () => {
                 setFirstName(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Last name</Label>
             <TextInput
               type="text"
@@ -74,8 +73,6 @@ const CreateModel = () => {
                 setLastName(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Email</Label>
             <TextInput
               type="email"
@@ -86,8 +83,6 @@ const CreateModel = () => {
                 setEmail(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Phone</Label>
             <TextInput
               type="number"
@@ -98,8 +93,6 @@ const CreateModel = () => {
                 setPhone(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Addres line 1</Label>
             <TextInput
               type="text"
@@ -110,8 +103,6 @@ const CreateModel = () => {
                 setAddresLine1(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Addres line 2</Label>
             <TextInput
               type="text"
@@ -122,8 +113,6 @@ const CreateModel = () => {
                 setAddresLine2(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Zip</Label>
             <TextInput
               type="number"
@@ -134,8 +123,6 @@ const CreateModel = () => {
                 setZip(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>City</Label>
             <TextInput
               type="text"
@@ -146,8 +133,6 @@ const CreateModel = () => {
                 setCity(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Country</Label>
             <TextInput
               type="text"
@@ -159,7 +144,7 @@ const CreateModel = () => {
               }
             />
           </div>
-          <div className="">
+          <div className="flex flex-col mx-2">
             <Label>Birth date</Label>
             <TextInput
               type="date"
@@ -170,8 +155,6 @@ const CreateModel = () => {
                 setBirthDate(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Nationality</Label>
             <TextInput
               type="text"
@@ -182,8 +165,6 @@ const CreateModel = () => {
                 setNationality(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Height</Label>
             <TextInput
               required
@@ -196,8 +177,6 @@ const CreateModel = () => {
                 setHeight(e.target.valueAsNumber)
               }
             />
-          </div>
-          <div className="">
             <Label>Shoe size</Label>
             <TextInput
               required
@@ -210,8 +189,6 @@ const CreateModel = () => {
                 setShoeSize(e.target.valueAsNumber)
               }
             />
-          </div>
-          <div className="">
             <Label>Hair Color</Label>
             <TextInput
               type="text"
@@ -222,8 +199,6 @@ const CreateModel = () => {
                 setHairColor(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Eye Color</Label>
             <TextInput
               type="text"
@@ -234,8 +209,6 @@ const CreateModel = () => {
                 setEyeColor(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Comments</Label>
             <TextInput
               type="text"
@@ -246,8 +219,6 @@ const CreateModel = () => {
                 setComments(e.target.value)
               }
             />
-          </div>
-          <div className="">
             <Label>Password</Label>
             <TextInput
               type="password"
@@ -258,11 +229,9 @@ const CreateModel = () => {
                 setPassword(e.target.value)
               }
             />
-            <div>
-              <Button className="m-4" onClick={handleSubmit}>
-                Create Model
-              </Button>
-            </div>
+            <Button className="m-4" onClick={handleSubmit}>
+              Create Model
+            </Button>
           </div>
         </form>
       </div>

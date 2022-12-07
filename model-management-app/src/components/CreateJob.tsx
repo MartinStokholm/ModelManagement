@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChangeEvent } from "react";
-import type { JobRegisterDto } from "../../interfaces/Job";
-import { useRegister } from "../../api/post/PostJob";
+import type { JobRegisterDto } from "../interfaces/Job";
+import { useRegister } from "../api/post/Job";
 import { Button, Label, TextInput } from "flowbite-react";
 
 export default function CreateJob() {
@@ -26,9 +26,9 @@ export default function CreateJob() {
 
   return (
     <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
-      <div className="flex flex-col justify-center ">
-        <form className="flex flex-col justify-center">
-          <div className=" inline-flex justify-between ">
+      <div className="flex flex-col">
+        <form className="flex flex-wrap justify-center content-center items-center">
+          <div className="flex flex-col mx-2">
             <Label>Customer</Label>
             <TextInput
               type="text"
@@ -40,7 +40,7 @@ export default function CreateJob() {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
+          <div className="flex flex-col mx-2">
             <Label>Start Date</Label>
             <TextInput
               type="date"
@@ -52,8 +52,8 @@ export default function CreateJob() {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
-            <Label>Days</Label>{" "}
+          <div className="flex flex-col mx-2">
+            <Label>Days</Label>
             <TextInput
               required
               type="number"
@@ -66,7 +66,7 @@ export default function CreateJob() {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
+          <div className="flex flex-col mx-2">
             <Label>Location</Label>
             <TextInput
               type="text"
@@ -78,7 +78,7 @@ export default function CreateJob() {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
+          <div className="flex flex-col mx-2">
             <Label> Comments</Label>
             <TextInput
               type="text"
@@ -90,7 +90,10 @@ export default function CreateJob() {
               }
             />
           </div>
-          <Button onClick={handleSubmit}>Create Job</Button>
+          <div className="flex flex-col mx-2">
+            <Label>Create a Job</Label>
+            <Button onClick={handleSubmit}>Submit</Button>
+          </div>
         </form>
       </div>
     </div>

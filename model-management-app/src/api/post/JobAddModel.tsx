@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { request } from "../Utils";
 import type { JobModelDto } from "../../interfaces/Job";
 
-export const jobAddModel = async (data: JobModelDto) => {
+export const register = async (data: JobModelDto) => {
   return await request({
     url: `Jobs/${data.jobId}/model/${data.modelId}`,
     method: "POST",
@@ -12,7 +12,7 @@ export const jobAddModel = async (data: JobModelDto) => {
 
 export const useJobAddModel = () => {
   const queryClient = useQueryClient();
-  return useMutation(jobAddModel, {
+  return useMutation(register, {
     onSuccess: () => {},
     onError: (error) => {
       console.log((error as any).message);

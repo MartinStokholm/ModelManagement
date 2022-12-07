@@ -1,15 +1,14 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
-import type { ManagerRegisterDto } from "../../interfaces/Manager";
-import { useRegister } from "../../api/post/PostManager";
+import type { ManagerRegisterDto } from "../interfaces/Manager";
+import { useRegister } from "../api/post/PostManager";
 
 const CreateManager = () => {
+  const { mutate: register } = useRegister();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
-
-  const { mutate: register } = useRegister();
 
   const handleSubmit = () => {
     const manager: ManagerRegisterDto = {
@@ -22,9 +21,9 @@ const CreateManager = () => {
   };
   return (
     <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
-      <div className="flex flex-col justify-center ">
-        <form className="flex flex-col justify-center">
-          <div className=" inline-flex justify-between ">
+      <div className="flex flex-col">
+        <form className="flex flex-wrap">
+          <div className="flex flex-col mx-2">
             <Label>First name</Label>
             <TextInput
               type="text"
@@ -36,7 +35,7 @@ const CreateManager = () => {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
+          <div className="flex flex-col mx-2">
             <Label>Last name</Label>
             <TextInput
               type="text"
@@ -48,7 +47,7 @@ const CreateManager = () => {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
+          <div className="flex flex-col mx-2">
             <Label>Email</Label>
             <TextInput
               type="email"
@@ -60,7 +59,7 @@ const CreateManager = () => {
               }
             />
           </div>
-          <div className=" inline-flex justify-between ">
+          <div className="flex flex-col mx-2">
             <Label>Password</Label>
             <TextInput
               type="password"
@@ -72,7 +71,10 @@ const CreateManager = () => {
               }
             />
           </div>
-          <Button onClick={handleSubmit}>Create Manager</Button>
+          <div className="flex flex-col mx-2">
+            <Label>Create a Manager</Label>
+            <Button onClick={handleSubmit}>Submit</Button>
+          </div>
         </form>
       </div>
     </div>

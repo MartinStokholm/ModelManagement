@@ -4,7 +4,7 @@ import { ExpenseDto } from "../../interfaces/Expense";
 
 export const expense = async (data: ExpenseDto) => {
   return await request({
-    url: `expense`,
+    url: `expenses`,
     method: "POST",
     data: data,
   });
@@ -12,7 +12,9 @@ export const expense = async (data: ExpenseDto) => {
 
 export const useExpense = () => {
   return useMutation(expense, {
-    onSuccess: () => {},
+    onSuccess: () => {
+      console.log("Expense added");
+    },
     onError: (error) => {
       console.log((error as any).message);
     },

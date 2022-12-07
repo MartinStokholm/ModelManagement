@@ -1,10 +1,18 @@
 import { Spinner } from "flowbite-react";
 import GetManagerList from "../api/get/Manager";
-import CreateManager from "../components/manager/CreateManager";
-import ManagerList from "../components/manager/ManagerList";
-import CreateModel from "../components/manager/CreateModel";
+import GetJobList from "../api/get/Jobs";
+import CreateManager from "../components/CreateManager";
+import CreateModel from "../components/CreateModel";
+import CreateJob from "../components/CreateJob";
+import AddModel from "../components/AddModel";
+import ManagerList from "../components/ManagerList";
+import JobList from "../components/JobList";
+import RemoveModel from "../components/RemoveModel";
 
 const Mananger = () => {
+  const { data: jobsData } = GetJobList();
+  console.log("job ", jobsData);
+
   const { data: managerData, isLoading, isError, error } = GetManagerList();
   console.log("manager ", managerData);
   if (isLoading) {
@@ -17,15 +25,15 @@ const Mananger = () => {
 
   return (
     <>
-      <div className="flex justify-between">
-        <div className="w-1/2">
-          <CreateManager />
-        </div>
-        <div className="w-1/2">
-          <CreateModel />
-        </div>
+      <div className="border-4 rounded border-blue-500 p-4">
+        <CreateJob />
+        <CreateManager />
+        <AddModel />
+        <RemoveModel />
+        <CreateModel />
+        <ManagerList managerData={managerData?.data} />
+        <JobList jobList={jobsData?.data} />
       </div>
-      <ManagerList managerData={managerData?.data} />
     </>
   );
 };
