@@ -50,8 +50,7 @@ const CreateModel = () => {
   return (
     <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <div className="flex flex-col">
-        <Label className="py-4">Create a Model</Label>
-        <form className="flex flex-wrap justify-between">
+        <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">
             <Label>First name</Label>
             <TextInput
@@ -63,6 +62,8 @@ const CreateModel = () => {
                 setFirstName(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Last name</Label>
             <TextInput
               type="text"
@@ -73,6 +74,8 @@ const CreateModel = () => {
                 setLastName(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Email</Label>
             <TextInput
               type="email"
@@ -83,6 +86,8 @@ const CreateModel = () => {
                 setEmail(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Phone</Label>
             <TextInput
               type="number"
@@ -93,6 +98,8 @@ const CreateModel = () => {
                 setPhone(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Addres line 1</Label>
             <TextInput
               type="text"
@@ -103,6 +110,8 @@ const CreateModel = () => {
                 setAddresLine1(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Addres line 2</Label>
             <TextInput
               type="text"
@@ -113,6 +122,8 @@ const CreateModel = () => {
                 setAddresLine2(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Zip</Label>
             <TextInput
               type="number"
@@ -123,6 +134,8 @@ const CreateModel = () => {
                 setZip(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>City</Label>
             <TextInput
               type="text"
@@ -133,6 +146,8 @@ const CreateModel = () => {
                 setCity(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Country</Label>
             <TextInput
               type="text"
@@ -155,6 +170,8 @@ const CreateModel = () => {
                 setBirthDate(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Nationality</Label>
             <TextInput
               type="text"
@@ -165,6 +182,8 @@ const CreateModel = () => {
                 setNationality(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Height</Label>
             <TextInput
               required
@@ -177,6 +196,8 @@ const CreateModel = () => {
                 setHeight(e.target.valueAsNumber)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Shoe size</Label>
             <TextInput
               required
@@ -189,6 +210,8 @@ const CreateModel = () => {
                 setShoeSize(e.target.valueAsNumber)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Hair Color</Label>
             <TextInput
               type="text"
@@ -199,6 +222,8 @@ const CreateModel = () => {
                 setHairColor(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Eye Color</Label>
             <TextInput
               type="text"
@@ -209,6 +234,8 @@ const CreateModel = () => {
                 setEyeColor(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Comments</Label>
             <TextInput
               type="text"
@@ -219,6 +246,8 @@ const CreateModel = () => {
                 setComments(e.target.value)
               }
             />
+          </div>
+          <div className="flex flex-col mx-2">
             <Label>Password</Label>
             <TextInput
               type="password"
@@ -229,9 +258,10 @@ const CreateModel = () => {
                 setPassword(e.target.value)
               }
             />
-            <Button className="m-4" onClick={handleSubmit}>
-              Create Model
-            </Button>
+          </div>
+          <div className="flex flex-col mx-2">
+            <Label>Create a Model</Label>
+            <Button onClick={handleSubmit}>Submit</Button>
           </div>
         </form>
       </div>

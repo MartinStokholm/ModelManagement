@@ -12,7 +12,9 @@ export const register = async (data: JobModelDto) => {
 
 export const useJobRemoveModel = () => {
   return useMutation(register, {
-    onSuccess: () => {},
+    onSuccess: () => {
+      console.log("Model removed from job");
+    },
     onError: (error) => {},
   });
 };

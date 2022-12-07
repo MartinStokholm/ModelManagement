@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import RequireAuth from "./auth/RequireAuth";
 
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Model from "./pages/Model";
 import Manager from "./pages/Manager";
 import NotAuthorized from "./pages/NotAuthorized";
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         {/* unprotected routes for login and unautharozition pages */}
         <Route path="login" element={<Login />} />
+        <Route path="logout" element={<Logout />} />
         <Route path="notauthorized" element={<NotAuthorized />} />
 
         {/* protected routes for manager and model roles */}

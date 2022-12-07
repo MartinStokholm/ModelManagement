@@ -27,7 +27,7 @@ export default function CreateJob() {
   return (
     <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <div className="flex flex-col">
-        <form className="flex flex-wrap justify-center content-center items-center">
+        <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">
             <Label>Customer</Label>
             <TextInput

@@ -13,7 +13,9 @@ export const register = async (data: JobModelDto) => {
 export const useJobAddModel = () => {
   const queryClient = useQueryClient();
   return useMutation(register, {
-    onSuccess: () => {},
+    onSuccess: () => {
+      console.log("Model added to job");
+    },
     onError: (error) => {
       console.log((error as any).message);
     },

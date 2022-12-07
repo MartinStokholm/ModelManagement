@@ -12,7 +12,9 @@ export const register = async (data: JobRegisterDto) => {
 
 export const useRegister = () => {
   return useMutation(register, {
-    onSuccess: () => {},
+    onSuccess: () => {
+      console.log("Job added");
+    },
     onError: (error) => {
       console.log((error as any).message);
     },

@@ -24,6 +24,9 @@ const Navigation = () => {
           <Navbar.Link className="hover:text-blue-500 md:hover:text-blue-500">
             <Link to="/login">Login</Link>
           </Navbar.Link>
+          <Navbar.Link className="hover:text-blue-500 md:hover:text-blue-500">
+            <Link to="/logout">Logout</Link>
+          </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </nav>
