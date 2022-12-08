@@ -22,20 +22,21 @@ export const useLogin = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = (location.state as any)?.from?.pathname || "/";
 
   return useMutation(login, {
     onSuccess: (account) => {
       const accessToken = account.data.jwt;
-      const roles = JwtParser(account.data.jwt)[
+      const role = JwtParser(account.data.jwt)[
         "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
       ];
       localStorage.setItem("token", account.data.jwt);
+      console.log(role);
+      localStorage.setItem("role", role);
 
       const user = localStorage.getItem("user");
       const pwd = localStorage.getItem("pwd");
 
-      setAuth([user, pwd, roles, accessToken]);
+      setAuth([user, pwd, role, accessToken]);
       console.log(user + " has logged in");
     },
     onError: (error) => {
@@ -43,7 +44,10 @@ export const useLogin = () => {
       console.log((error as any).message);
     },
     onSettled: () => {
-      navigate(from, { replace: true });
+      const url = location.state?.from?.pathname || "/";
+      const role = localStorage.getItem("role");
+
+      navigate(url + role);
     },
   });
 };
