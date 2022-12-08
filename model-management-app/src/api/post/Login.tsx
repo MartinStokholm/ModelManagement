@@ -2,7 +2,7 @@ import { useMutation } from "react-query";
 import { request } from "../Utils";
 import JwtParser from "../JwtParse";
 import useAuth from "../../auth/useAuth";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { AccountLoginDto } from "../../interfaces/Account";
 
 export const login = async (data: AccountLoginDto) => {
@@ -18,10 +18,9 @@ export const login = async (data: AccountLoginDto) => {
 };
 
 export const useLogin = () => {
-  const { auth, setAuth } = useAuth();
+  const { setAuth } = useAuth();
 
   const navigate = useNavigate();
-  const location = useLocation();
 
   return useMutation(login, {
     onSuccess: (account) => {

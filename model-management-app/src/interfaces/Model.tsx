@@ -18,14 +18,6 @@ export type ModelRegisterDto = {
   password: string;
 };
 
-export type ModelDto = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNo: string;
-  jobs: string[];
-};
-
 export type account = {
   efAccountId: number;
   email: string;
@@ -33,11 +25,10 @@ export type account = {
   isManager: true;
 };
 
-type expense = {
-  efExpenseId: number;
-  modelId: number;
-  jobId: number;
-  date: string;
-  text: string;
-  amount: number;
+export type ModelDto = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNo: string;
+  jobs: string[];
 };
