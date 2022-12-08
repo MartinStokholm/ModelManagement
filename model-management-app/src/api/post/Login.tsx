@@ -44,10 +44,8 @@ export const useLogin = () => {
       console.log((error as any).message);
     },
     onSettled: () => {
-      const url = location.state?.from?.pathname || "/";
       const role = localStorage.getItem("role");
-
-      navigate(url + role);
+      navigate("/" + role);
     },
   });
 };
