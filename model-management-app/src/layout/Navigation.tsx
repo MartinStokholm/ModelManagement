@@ -1,4 +1,4 @@
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Route, Router, Link } from "react-router-dom";
 
 import { Navbar } from "flowbite-react";
 
